@@ -32,7 +32,7 @@ A full-stack e-commerce application built with Spring Boot, JWT authentication, 
 
 ### Prerequisites
 - Java 17
-- MySQL (password: chill)
+- MySQL 
 - Maven
 
 ### Setup
