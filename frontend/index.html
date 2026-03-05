@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">E-Shop</h1>
+            <div class="nav-links">
+                <a href="#" onclick="showHome()">Home</a>
+                <a href="#" onclick="showProducts()">Products</a>
+                <a href="#" onclick="showCategories()">Categories</a>
+                <div id="authLinks">
+                    <a href="#" onclick="showLogin()">Login</a>
+                    <a href="#" onclick="showRegister()">Register</a>
+                </div>
+                <div id="userInfo" style="display: none;">
+                    <span id="username"></span>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <h1>Welcome to E-Shop</h1>
+            <p>Your one-stop shop for electronics, books, and clothing!</p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Electronics</h3>
+                    <p>Latest gadgets and devices</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Books</h3>
+                    <p>Best sellers and classics</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Clothing</h3>
+                    <p>Fashion for everyone</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Page -->
+        <div id="productsPage" class="page">
+            <h2>Our Products</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button onclick="searchProducts()">Search</button>
+            </div>
+            <div id="productsContainer" class="products-grid"></div>
+        </div>
+
+        <!-- Categories Page -->
+        <div id="categoriesPage" class="page">
+            <h2>Categories</h2>
+            <div id="categoriesContainer" class="categories-grid"></div>
+        </div>
+
+        <!-- Category Detail Page -->
+        <div id="categoryDetailPage" class="page">
+            <button onclick="showCategories()" class="back-btn">← Back to Categories</button>
+            <h2 id="categoryName"></h2>
+            <div id="categoryProducts" class="products-grid"></div>
+        </div>
+
+        <!-- Product Detail Page -->
+        <div id="productDetailPage" class="page">
+            <button onclick="showProducts()" class="back-btn">← Back to Products</button>
+            <div id="productDetail" class="product-detail"></div>
+        </div>
+
+        <!-- Login Page -->
+        <div id="loginPage" class="page">
+            <h2>Login</h2>
+            <form id="loginForm" class="auth-form" onsubmit="login(event)">
+                <input type="text" id="loginUsername" placeholder="Username" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p id="loginError" class="error"></p>
+            </form>
+        </div>
+
+        <!-- Register Page -->
+        <div id="registerPage" class="page">
+            <h2>Register</h2>
+            <form id="registerForm" class="auth-form" onsubmit="register(event)">
+                <input type="text" id="regUsername" placeholder="Username" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="text" id="regFullName" placeholder="Full Name" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button type="submit">Register</button>
+                <p id="registerError" class="error"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
